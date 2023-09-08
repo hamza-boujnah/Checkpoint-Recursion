@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+</head>
+<body>
+    <h1>Name: Is Palindrome</h1>
+
+    <h2>Description:</h2>
+    <p>
+        Test if a word is a palindrome. A word is a palindrome if and only if it can be read from left to right or from right to left: gag; kayak; php; radar;...
+    </p>
+
+    <h2>Instructions:</h2>
+    <p>
+        <strong>Breakdown of the processing:</strong> We compare the characters located at the ends of the word:
+    </p>
+    <ul>
+        <li>If they are equal, we test the rest of the word.</li>
+        <li>If they are different, we stop.</li>
+    </ul>
+
+    <p>
+        <strong>Stop condition:</strong> An empty word or a word containing a single character is a palindrome.
+    </p>
+
+    <h2>Palindrome Checker</h2>
+    <p>Enter a word to check if it's a palindrome:</p>
+    <input type="text" id="wordInput">
+    <button onclick="checkPalindrome()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkPalindrome() {
+            const word = document.getElementById('wordInput').value.toLowerCase();
+            const reversedWord = word.split('').reverse().join('');
+            if (word === reversedWord) {
+                document.getElementById('result').textContent = 'It is a palindrome!';
+            } else {
+                document.getElementById('result').textContent = 'It is not a palindrome.';
+            }
+        }
+    </script>
+</body>
+</html>
